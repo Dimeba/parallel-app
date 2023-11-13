@@ -7,10 +7,7 @@ import ImageContainer from './ImageContainer'
 
 const OurPlatform = () => {
 	return (
-		<section
-			id='platform'
-			className={`${'containerCenter '}` + styles.platform}
-		>
+		<section id='platform' className={styles.platform}>
 			<BlueBox newClass={styles.platformContent}>
 				<div className={styles.platformText}>
 					<h2>Our Platform</h2>

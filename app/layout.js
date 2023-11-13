@@ -35,7 +35,6 @@ export default function RootLayout({ children }) {
 						alt='background image'
 					/>
 				</div>
-				<div className='blue-background'></div>
 				<Header />
 				{children}
 				<Footer />

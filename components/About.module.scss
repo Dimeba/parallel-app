@@ -1,9 +1,6 @@
 @use '@/app/base';
 
 .about {
-	padding-top: base.$desktop-margin;
-	padding-bottom: base.$desktop-margin;
-
 	h3 {
 		span {
 			color: base.$color-highlight;

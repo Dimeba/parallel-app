@@ -1,14 +1,24 @@
 @use '@/app/base';
 
 .transactions {
-	padding-top: base.$desktop-margin;
-	padding-bottom: base.$desktop-margin;
+	width: 100%;
+	max-width: 100%;
 }
 
 .transactionsContainer {
-	display: flex;
 	overflow: hidden;
+	display: flex;
+	flex-direction: column;
 	gap: base.$desktop-margin;
+}
+
+.slider {
+	display: flex;
+	gap: base.$desktop-margin;
+	animation-name: slide;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	width: fit-content;
 }
 
 .transaction {
@@ -26,6 +36,17 @@
 	border-radius: 20px;
 	overflow: hidden;
 	flex-shrink: 0;
+}
+
+// animation
+@keyframes slide {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+	50% {
+		transform: translateX(calc(-100% + 100vw));
+	}
 }
 
 @media screen and (max-width: 1024px) {

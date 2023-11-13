@@ -16,4 +16,7 @@
 }
 
 @media screen and (max-width: 768px) {
+	.blueBox {
+		padding: base.$mobile-margin;
+	}
 }

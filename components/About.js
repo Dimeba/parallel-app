@@ -7,7 +7,7 @@ import BlueBox from './BlueBox'
 
 const About = () => {
 	return (
-		<section id='about' className={`${'containerCenter '}` + styles.about}>
+		<section id='about' className={styles.about}>
 			<h2>About Us</h2>
 			<div className={styles.services}>
 				<div>

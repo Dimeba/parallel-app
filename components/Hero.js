@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const Hero = () => {
 	return (
-		<section id='hero' className={`${'containerCenter '}` + styles.hero}>
+		<section id='hero' className={styles.hero}>
 			<h1>
 				We are <span>aligned with our clients</span> every step of the way
 			</h1>

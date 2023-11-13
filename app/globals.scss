@@ -24,7 +24,7 @@ html {
 }
 
 body {
-	background-image: url(../public/background.png);
+	background-image: url('/background.png');
 	background-size: 100%;
 }
 
@@ -67,9 +67,17 @@ h5 {
 }
 
 .containerCenter {
-	width: 1284px;
+	width: 1440px;
 	max-width: 90%;
 	margin: 0 auto;
+}
+
+// sections
+section {
+	width: 1440px;
+	max-width: 90%;
+	// min-height: 100vh;
+	margin: 0 auto 33vh auto;
 }
 
 // buttons
@@ -102,12 +110,11 @@ h5 {
 }
 
 @media screen and (max-width: 768px) {
-	.containerCenter {
-		max-width: 100%;
-		padding: 0 base.$mobile-margin;
-	}
-
 	h2 {
 		font-size: 2rem;
+	}
+
+	section {
+		margin: 0 auto 10vh auto;
 	}
 }

@@ -5,6 +5,11 @@ import styles from './Transactions.module.scss'
 import Transaction from './Transaction'
 
 const Transactions = () => {
+	const tempList = [
+		1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+	]
+	const middle = Math.ceil(tempList.length / 2)
+
 	return (
 		<section id='transactions' className={styles.transactions}>
 			<div className='containerCenter'>
@@ -15,27 +20,27 @@ const Transactions = () => {
 				className={styles.transactionsContainer}
 				style={{ marginBottom: '2rem' }}
 			>
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-			</div>
+				{/* Top row */}
+				<div
+					className={styles.slider}
+					style={{
+						animationDuration: `${tempList.slice(0, middle).length * 3}s`
+					}}
+				>
+					{tempList.slice(0, middle).map((item, index) => (
+						<Transaction key={index} />
+					))}
+				</div>
 
-			<div className={styles.transactionsContainer}>
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
-				<Transaction />
+				{/* Bottom row */}
+				<div
+					className={styles.slider}
+					style={{ animationDuration: `${tempList.slice(middle).length * 4}s` }}
+				>
+					{tempList.slice(middle).map((item, index) => (
+						<Transaction key={index} />
+					))}
+				</div>
 			</div>
 		</section>
 	)

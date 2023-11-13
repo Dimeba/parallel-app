@@ -6,7 +6,7 @@ import TeamMember from './TeamMember'
 
 const Team = ({ team }) => {
 	return (
-		<section id='team' className={`${'containerCenter '}` + styles.team}>
+		<section id='team' className={styles.team}>
 			{/* <h2>Meet Our Team</h2> */}
 			<h2>Meet Our Team</h2>
 			<div className={styles.members}>

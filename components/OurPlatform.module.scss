@@ -1,8 +1,12 @@
 @use '@/app/base';
 
+.platform {
+	min-height: auto;
+}
+
 .platformContent {
 	display: grid;
-	grid-template-columns: repeat(12, 1fr);
+	grid-template-columns: repeat(12, minmax(auto, 1fr));
 	grid-gap: 2rem;
 	align-items: center;
 
@@ -20,14 +24,12 @@
 
 .platformText {
 	grid-column: span 6;
-	width: 100%;
 }
 
 .platformImage {
 	grid-column: span 6;
 	aspect-ratio: 16 / 10;
 	filter: drop-shadow(-1rem 1rem 10px rgba(black, 0.5));
-	width: 100%;
 }
 
 @media screen and (max-width: 1024px) {

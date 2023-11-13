@@ -44,10 +44,7 @@ export default async function TeamMember({ params }) {
 
 	return (
 		<main>
-			<section
-				id='team-member'
-				className={`${'containerCenter '}` + styles.teamMember}
-			>
+			<section id='team-member' className={styles.teamMember}>
 				<div className={styles.memberPhoto}>
 					<Image
 						src={'https:' + member.fields.photo.fields.file.url}
@@ -61,7 +58,7 @@ export default async function TeamMember({ params }) {
 				</div>
 				<div className={styles.bio}>
 					<Link href='/' aria-label='Homepage'>
-						<p>Back</p>
+						<p style={{ fontSize: '0.8rem' }}>Back</p>
 					</Link>
 					<h3 style={{ marginTop: '1rem' }}>{member.fields.name}</h3>
 					<p>{member.fields.title}</p>
