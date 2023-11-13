@@ -34,8 +34,8 @@ const Transactions = () => {
 
 				{/* Bottom row */}
 				<div
-					className={styles.slider}
-					style={{ animationDuration: `${tempList.slice(middle).length * 4}s` }}
+					className={styles.sliderBack}
+					style={{ animationDuration: `${tempList.slice(middle).length * 3}s` }}
 				>
 					{tempList.slice(middle).map((item, index) => (
 						<Transaction key={index} />

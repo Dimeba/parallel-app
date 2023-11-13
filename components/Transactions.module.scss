@@ -21,6 +21,15 @@
 	width: fit-content;
 }
 
+.sliderBack {
+	display: flex;
+	gap: base.$desktop-margin;
+	animation-name: slideBack;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	width: fit-content;
+}
+
 .transaction {
 	h4 {
 		color: base.$color-highlight;
@@ -46,6 +55,16 @@
 	}
 	50% {
 		transform: translateX(calc(-100% + 100vw));
+	}
+}
+
+@keyframes slideBack {
+	0%,
+	100% {
+		transform: translateX(calc(-100% + 100vw));
+	}
+	50% {
+		transform: translateX(calc(0));
 	}
 }
 
