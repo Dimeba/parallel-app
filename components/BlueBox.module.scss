@@ -1,0 +1,19 @@
+@use '@/app/base';
+
+.blueBox {
+	background-color: base.$color-main;
+	background-image: url(../public/symbol-outline.svg);
+	background-size: cover;
+	padding: base.$desktop-margin;
+	border-radius: 20px;
+
+	* {
+		color: white !important;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+}

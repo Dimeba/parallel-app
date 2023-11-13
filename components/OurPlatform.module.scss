@@ -1,0 +1,44 @@
+@use '@/app/base';
+
+.platformContent {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	grid-gap: 2rem;
+	align-items: center;
+
+	h2 {
+		margin-bottom: 1.2rem;
+	}
+
+	p {
+		font-weight: 500;
+		font-size: 1.5rem;
+		line-height: 1.5;
+		color: base.$color-light;
+	}
+}
+
+.platformText {
+	grid-column: span 6;
+	width: 100%;
+}
+
+.platformImage {
+	grid-column: span 6;
+	aspect-ratio: 16 / 10;
+	filter: drop-shadow(-1rem 1rem 10px rgba(black, 0.5));
+	width: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+}
+
+@media screen and (max-width: 768px) {
+	.platformText {
+		grid-column: span 12;
+	}
+
+	.platformImage {
+		grid-column: span 12;
+	}
+}

@@ -1,0 +1,113 @@
+@use 'base';
+
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	transition: 0.3s;
+	color: base.$color-main;
+}
+
+html {
+	scroll-behavior: smooth !important;
+}
+
+.background-symbol {
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	top: 0;
+	left: 0;
+	z-index: -2;
+}
+
+body {
+	background-image: url(../public/background.png);
+	background-size: 100%;
+}
+
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+p {
+	font-family: 'PT Sans', sans-serif;
+	line-height: 1.75rem;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 4.625rem;
+}
+h2 {
+	font-size: 3rem;
+	margin-bottom: 3.8rem;
+}
+h3 {
+	font-size: 1.5rem;
+	margin-bottom: 1.25rem;
+}
+
+h4 {
+	font-size: 1.25rem;
+}
+
+h5 {
+	font-size: 1rem;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
+.containerCenter {
+	width: 1284px;
+	max-width: 90%;
+	margin: 0 auto;
+}
+
+// buttons
+
+%button {
+	padding: 0.8rem 2rem;
+	font-weight: 700;
+	border-radius: 0.3rem;
+	border: none;
+	width: fit-content;
+	cursor: pointer;
+}
+
+.button-blue {
+	@extend %button;
+	background-color: base.$color-highlight;
+	border: 2px solid base.$color-highlight;
+	color: white;
+}
+
+.button-blue:hover {
+	background-color: transparent;
+	color: base.$color-highlight;
+}
+
+@media screen and (max-width: 1024px) {
+	body {
+		background-image: none;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.containerCenter {
+		max-width: 100%;
+		padding: 0 base.$mobile-margin;
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+}

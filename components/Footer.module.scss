@@ -1,0 +1,78 @@
+@use '@/app/base';
+
+#footer {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3.75rem;
+	margin-top: base.$desktop-margin;
+	margin-bottom: base.$desktop-margin;
+
+	div {
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 3.75rem;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	ul {
+		list-style: none;
+		display: flex;
+		gap: 2.5rem;
+
+		li {
+			font-size: 0.875rem;
+			position: relative;
+		}
+
+		li:hover {
+			color: base.$color-highlight;
+		}
+
+		// li:after {
+		// 	content: '';
+		// 	position: absolute;
+		// 	width: 0;
+		// 	height: 2px;
+		// 	right: 0;
+		// 	display: block;
+		// 	background: base.$color-highlight;
+		// 	transition: width 0.2s ease;
+		// 	-webkit-transition: width 0.2s ease;
+		// }
+
+		// li:hover:after {
+		// 	width: 100%;
+		// 	left: 0;
+		// }
+	}
+
+	.links {
+		font-size: 0.875rem;
+	}
+
+	.menu {
+		font-weight: 700;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#footer {
+		flex-direction: column;
+		padding: base.$mobile-margin;
+
+		div {
+			flex-direction: column;
+			justify-content: start;
+		}
+
+		ul {
+			flex-direction: column;
+			gap: 1rem;
+		}
+	}
+}

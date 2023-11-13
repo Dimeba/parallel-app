@@ -1,0 +1,131 @@
+@use '@/app/base';
+
+.about {
+	padding-top: base.$desktop-margin;
+	padding-bottom: base.$desktop-margin;
+
+	h3 {
+		span {
+			color: base.$color-highlight;
+		}
+	}
+}
+
+.services {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	margin-bottom: base.$desktop-margin;
+
+	div {
+		width: 26%;
+	}
+}
+
+.highlights {
+	display: flex;
+	justify-content: space-between;
+}
+
+// Comparison Table
+
+.table {
+	width: 47%;
+
+	ul {
+		list-style: none;
+
+		li {
+			border-bottom: 1px solid white;
+			padding: 0.6rem 0;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		li:last-child {
+			border-bottom: 0;
+		}
+	}
+}
+
+.tableHead {
+	display: flex;
+	width: 70%;
+	margin: 0 0 0 auto;
+}
+
+.ticks {
+	width: 70%;
+	display: flex;
+}
+
+.third {
+	width: 33%;
+	display: flex;
+	justify-content: center;
+}
+
+// Key Info (highlights)
+
+.keyInfo {
+	width: 47%;
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: base.$desktop-margin;
+
+	h2 {
+		font-size: 3rem;
+		margin: 0;
+	}
+}
+
+@media screen and (max-width: 1024px) {
+	.highlights {
+		flex-direction: column;
+		gap: base.$desktop-margin;
+	}
+
+	.table {
+		width: 100%;
+
+		ul {
+			li {
+				border-bottom: 1px solid base.$color-main;
+			}
+		}
+
+		h5 {
+			font-size: 0.8rem;
+		}
+
+		p {
+			font-size: 0.7rem;
+		}
+	}
+
+	.tableHead,
+	.ticks {
+		width: 60%;
+	}
+
+	.keyInfo {
+		width: 100%;
+
+		* {
+			text-align: center;
+		}
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.services {
+		flex-direction: column;
+		gap: base.$mobile-margin;
+		div {
+			width: 100%;
+		}
+	}
+}
