@@ -23,7 +23,35 @@ export const metadata = {
 	}
 }
 
-export default function RootLayout({ children }) {
+// contentful
+import { createClient } from 'contentful'
+
+export default async function RootLayout({ children }) {
+	const client = createClient({
+		space: process.env.space,
+		accessToken: process.env.accessToken
+	})
+
+	const about = await client.getEntries({
+		content_type: 'aboutSection'
+	})
+
+	const team = await client.getEntries({
+		content_type: 'teamSection'
+	})
+
+	const transactions = await client.getEntries({
+		content_type: 'transactionsSection'
+	})
+
+	const platform = await client.getEntries({
+		content_type: 'platformSection'
+	})
+
+	const company = await client.getEntries({
+		content_type: 'companyInfo'
+	})
+
 	return (
 		<html lang='en'>
 			<body className={ptSans.className}>
@@ -35,9 +63,20 @@ export default function RootLayout({ children }) {
 						alt='background image'
 					/>
 				</div>
-				<Header />
+				<Header
+					about={about.items[0].fields.title}
+					transactions={transactions.items[0].fields.title}
+					team={team.items[0].fields.title}
+					platform={platform.items[0].fields.title}
+				/>
 				{children}
-				<Footer />
+				<Footer
+					about={about.items[0].fields.title}
+					transactions={transactions.items[0].fields.title}
+					team={team.items[0].fields.title}
+					platform={platform.items[0].fields.title}
+					company={company.items[0]}
+				/>
 			</body>
 		</html>
 	)

@@ -4,70 +4,35 @@ import styles from './About.module.scss'
 // components
 import ComparisonTable from './ComparisonTable'
 import BlueBox from './BlueBox'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-const About = () => {
+const About = ({ content }) => {
 	return (
 		<section id='about' className={styles.about}>
 			<h2>About Us</h2>
 			<div className={styles.services}>
-				<div>
-					<h3>
-						<span>Competitive</span> Financing
-					</h3>
-					<p>
-						With over $5bn in financing closed in the past decade, our extensive
-						network of lenders, including regional banks, debt funds, and life
-						insurance companies, ensures the best financing options for our
-						clients.
-					</p>
-				</div>
-				<div>
-					<h3>
-						<span>In-house</span> Service
-					</h3>
-					<p>
-						We provide an aligned and transparent approach, acting as in-house
-						advisors for our clients. With our technology platform, clients can
-						interact with us and lenders, leading to a streamlined and efficient
-						financing process.
-					</p>
-				</div>
-				<div>
-					<h3>
-						<span>Lowest</span> Cost
-					</h3>
-					<p>
-						With our powerful team and technology platform, we can offer
-						significantly reduced advisory costs.
-					</p>
-					{/* <p>
-						With our powerful team and technology platform, we can offer
-						significantly reduced advisory costs. Unlike brokers who charge a
-						percentage-based commission on closed deals, we charge a flat fee to
-						manage your financing.
-					</p> */}
-				</div>
+				{content.fields.services.map(service => {
+					const title = service.fields.title.split(/\s+/)
+					return (
+						<div key={service.sys.id}>
+							<h3>
+								<span>{title[0]}</span> <span>{title[1]}</span>
+							</h3>
+							<p>{service.fields.description}</p>
+						</div>
+					)
+				})}
 			</div>
 
 			<div className={styles.highlights}>
 				<ComparisonTable />
 				<BlueBox newClass={styles.keyInfo}>
-					<div>
-						<h2>$5B+</h2>
-						<p>Financing Closed</p>
-					</div>
-					<div>
-						<h2>20+</h2>
-						<p>Years of experience</p>
-					</div>
-					{/* <div>
-						<h2>$5B+</h2>
-						<p>Financing Closed</p>
-					</div>
-					<div>
-						<h2>20+</h2>
-						<p>Years of experience</p>
-					</div> */}
+					{content.fields.highlights.map(highlight => (
+						<div key={highlight.sys.id}>
+							<h2>{highlight.fields.value}</h2>
+							<p>{highlight.fields.title}</p>
+						</div>
+					))}
 				</BlueBox>
 			</div>
 		</section>

@@ -21,16 +21,13 @@
 	width: fit-content;
 }
 
-.sliderBack {
-	display: flex;
-	gap: base.$desktop-margin;
-	animation-name: slideBack;
-	animation-iteration-count: infinite;
-	animation-timing-function: linear;
-	width: fit-content;
+.sliderReverse {
+	@extend .slider;
+	animation-direction: reverse;
 }
 
 .transaction {
+	width: 200px;
 	h4 {
 		color: base.$color-highlight;
 		margin-top: 1.25rem;
@@ -40,8 +37,8 @@
 
 .transactionPhoto {
 	position: relative;
-	width: 17.25rem;
-	height: 17.25rem;
+	width: 100%;
+	aspect-ratio: 1 / 1;
 	border-radius: 20px;
 	overflow: hidden;
 	flex-shrink: 0;
@@ -49,22 +46,11 @@
 
 // animation
 @keyframes slide {
-	0%,
-	100% {
+	0% {
 		transform: translateX(0);
 	}
-	50% {
-		transform: translateX(calc(-100% + 100vw));
-	}
-}
-
-@keyframes slideBack {
-	0%,
 	100% {
 		transform: translateX(calc(-100% + 100vw));
-	}
-	50% {
-		transform: translateX(calc(0));
 	}
 }
 
@@ -77,7 +63,7 @@
 	}
 
 	.transaction {
-		width: 100%;
+		width: 90vw;
 	}
 
 	// .transactionPhoto {

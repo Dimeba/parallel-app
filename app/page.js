@@ -14,17 +14,33 @@ export default async function Home() {
 		accessToken: process.env.accessToken
 	})
 
+	const hero = await client.getEntries({
+		content_type: 'heroSection'
+	})
+
+	const about = await client.getEntries({
+		content_type: 'aboutSection'
+	})
+
 	const team = await client.getEntries({
-		content_type: 'team'
+		content_type: 'teamSection'
+	})
+
+	const transactions = await client.getEntries({
+		content_type: 'transactionsSection'
+	})
+
+	const platform = await client.getEntries({
+		content_type: 'platformSection'
 	})
 
 	return (
 		<main>
-			<Hero />
-			<About />
-			<Transactions />
-			<Team team={team.items} />
-			<OurPlatform />
+			<Hero content={hero.items[0]} />
+			<About content={about.items[0]} />
+			<Transactions content={transactions.items[0]} />
+			<Team content={team.items[0]} />
+			<OurPlatform content={platform.items[0]} />
 		</main>
 	)
 }

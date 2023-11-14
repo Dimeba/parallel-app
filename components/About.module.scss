@@ -2,7 +2,7 @@
 
 .about {
 	h3 {
-		span {
+		span:nth-of-type(1) {
 			color: base.$color-highlight;
 		}
 	}

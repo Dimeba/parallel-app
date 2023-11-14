@@ -12,7 +12,7 @@ import Image from 'next/image'
 import { useIntersectionObserver } from '@/hooks/useIntersectionObserver'
 import { useState } from 'react'
 
-const Header = () => {
+const Header = ({ about, team, transactions, platform }) => {
 	// Scrolling Header
 	const [targetRef, isIntersecting] = useIntersectionObserver()
 
@@ -59,30 +59,24 @@ const Header = () => {
 					<Hamburger toggleMenu={toggleMenu} menuClass={menuClass} />
 
 					<ul className={hiddenMenuClass}>
-						<a href='/#about' aria-label='About Us'>
-							<li onClick={() => closeMenu()}>About Us</li>
+						<a href='/#about' aria-label={about}>
+							<li onClick={() => closeMenu()}>{about}</li>
 						</a>
 						<a href='/#transactions'>
-							<li
-								onClick={() => closeMenu()}
-								aria-label='Featured Transactions'
-							>
-								Featured Transactions
+							<li onClick={() => closeMenu()} aria-label={transactions}>
+								{transactions}
 							</li>
 						</a>
 						<a href='/#team'>
-							<li onClick={() => closeMenu()} aria-label='Meet Our Team'>
-								Meet Our Team
+							<li onClick={() => closeMenu()} aria-label={team}>
+								{team}
 							</li>
 						</a>
 						<a href='/#platform'>
-							<li onClick={() => closeMenu()} aria-label='Our Platform'>
-								Our Platform
+							<li onClick={() => closeMenu()} aria-label={platform}>
+								{platform}
 							</li>
 						</a>
-						{/* <a href='/#team'>
-							<li onClick={() => closeMenu()}>Principal Bio</li>
-						</a> */}
 					</ul>
 				</div>
 			</header>

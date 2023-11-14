@@ -4,13 +4,12 @@ import styles from './Team.module.scss'
 // components
 import TeamMember from './TeamMember'
 
-const Team = ({ team }) => {
+const Team = ({ content }) => {
 	return (
 		<section id='team' className={styles.team}>
-			{/* <h2>Meet Our Team</h2> */}
-			<h2>Meet Our Team</h2>
+			<h2>{content.fields.title}</h2>
 			<div className={styles.members}>
-				{team.map(member => (
+				{content.fields.team.map(member => (
 					<TeamMember
 						key={member.sys.id}
 						name={member.fields.name}

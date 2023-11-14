@@ -5,21 +5,17 @@ import styles from './OurPlatform.module.scss'
 import BlueBox from './BlueBox'
 import ImageContainer from './ImageContainer'
 
-const OurPlatform = () => {
+const OurPlatform = ({ content }) => {
 	return (
 		<section id='platform' className={styles.platform}>
 			<BlueBox newClass={styles.platformContent}>
 				<div className={styles.platformText}>
-					<h2>Our Platform</h2>
-					<p>
-						Using our technology platform, clients can interact with us and
-						lenders, resulting in streamlined communication and a more efficient
-						financing process.
-					</p>
+					<h2>{content.fields.title}</h2>
+					<p>{content.fields.description}</p>
 				</div>
 
 				<ImageContainer
-					src={'/platform-mockup.png'}
+					src={'https:' + content.fields.image.fields.file.url}
 					contain
 					className={styles.platformImage}
 				/>
