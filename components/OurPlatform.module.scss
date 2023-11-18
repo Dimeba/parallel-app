@@ -33,14 +33,16 @@
 }
 
 @media screen and (max-width: 1024px) {
-}
-
-@media screen and (max-width: 768px) {
-	.platformText {
-		grid-column: span 12;
+	.platformContent {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
 	}
 
 	.platformImage {
-		grid-column: span 12;
+		width: 100%;
 	}
+}
+
+@media screen and (max-width: 768px) {
 }

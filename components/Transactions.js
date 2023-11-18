@@ -10,24 +10,18 @@ import Transaction from './Transaction'
 import { useState, useEffect } from 'react'
 
 const Transactions = ({ content }) => {
-	// const middle = Math.ceil(transactions.length / 2)
+	const middle = Math.ceil(content.fields.transactions.length / 2)
 
-	// const [topRow, setTopRow] = useState(transactions.slice(0, middle))
-	// const [botRow, setBotRow] = useState(transactions.slice(middle))
-
-	// const [count, setCount] = useState(0)
-
-	// useEffect(() => {
-	// 	const rotate = () => {
-	// 		setTimeout(() => {
-	// 			setTopRow(prev => [...prev, prev[count]])
-	// 			setCount(prev => prev + 1)
-	// 			console.log(topRow.length)
-	// 		}, '1500')
-	// 	}
-
-	// 	rotate()
-	// }, [topRow])
+	const topRow = [
+		...content.fields.transactions.slice(0, middle),
+		...content.fields.transactions.slice(0, middle),
+		...content.fields.transactions.slice(0, middle)
+	]
+	const botRow = [
+		...content.fields.transactions.slice(middle),
+		...content.fields.transactions.slice(middle),
+		...content.fields.transactions.slice(middle)
+	]
 
 	return (
 		<section id='transactions' className={styles.transactions}>
@@ -43,12 +37,12 @@ const Transactions = ({ content }) => {
 				<div
 					className={styles.slider}
 					style={{
-						animationDuration: `${content.fields.transactions.length * 2.5}s`
+						animationDuration: `${topRow.length * 2.5 * 3}s`
 					}}
 				>
-					{content.fields.transactions.map(transaction => (
+					{topRow.map((transaction, index) => (
 						<Transaction
-							key={transaction.sys.id}
+							key={transaction.sys.id + index}
 							price={transaction.fields.price}
 							property={transaction.fields.propertyType}
 							loan={transaction.fields.loanType}
@@ -62,12 +56,12 @@ const Transactions = ({ content }) => {
 				<div
 					className={styles.sliderReverse}
 					style={{
-						animationDuration: `${content.fields.transactions.length * 2.5}s`
+						animationDuration: `${botRow.length * 2.5 * 3}s`
 					}}
 				>
-					{content.fields.transactions.map(transaction => (
+					{botRow.map((transaction, index) => (
 						<Transaction
-							key={transaction.sys.id}
+							key={transaction.sys.id + index}
 							price={transaction.fields.price}
 							property={transaction.fields.propertyType}
 							loan={transaction.fields.loanType}
