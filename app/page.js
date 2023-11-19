@@ -34,9 +34,13 @@ export default async function Home() {
 		content_type: 'platformSection'
 	})
 
+	const company = await client.getEntries({
+		content_type: 'companyInfo'
+	})
+
 	return (
 		<main>
-			<Hero content={hero.items[0]} />
+			<Hero content={hero.items[0]} company={company.items[0]} />
 			<About content={about.items[0]} />
 			<Transactions content={transactions.items[0]} />
 			<Team content={team.items[0]} />

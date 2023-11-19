@@ -6,12 +6,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-const Hero = ({ content }) => {
+const Hero = ({ content, company }) => {
 	return (
 		<section id='hero' className={styles.hero}>
-			<>{documentToReactComponents(content.fields.title)}</>
+			<div>{documentToReactComponents(content.fields.title)}</div>
 
-			<Link href='mailto:info@rallelcre.com'>
+			<Link href={`mailto:${company.fields.email}`}>
 				<button className='button-blue'>{content.fields.buttonText}</button>
 			</Link>
 
