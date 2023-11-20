@@ -12,7 +12,6 @@ const Modal = ({ setShowModal, text }) => {
 
 				<form
 					name='contact'
-					method='POST'
 					netlify-honeypot='bot-field'
 					data-netlify='true'
 					// onSubmit={e => {
