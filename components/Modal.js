@@ -21,9 +21,7 @@ const Modal = ({ setShowModal, text }) => {
 				>
 					<input type='text' placeholder='Full Name' />
 					<input type='email' placeholder='Email Address' />
-					<div className='buttonsRow'>
-						<button className='button-blue'>Confirm</button>
-					</div>
+					<button className='button-blue'>Confirm</button>
 				</form>
 				<p className={styles.cancel} onClick={() => setShowModal(false)}>
 					Cancel
