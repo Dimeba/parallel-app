@@ -4,9 +4,12 @@ import styles from './Modal.module.scss'
 // components
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
-const Modal = ({ setShowModal, text }) => {
+const Modal = ({ showModal, setShowModal, text }) => {
 	return (
-		<section className={styles.modal}>
+		<section
+			className={styles.modal}
+			style={{ display: showModal ? 'flex' : 'none' }}
+		>
 			<div className={styles.modalContent}>
 				{documentToReactComponents(text)}
 

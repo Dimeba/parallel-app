@@ -17,9 +17,12 @@ const Hero = ({ content, company }) => {
 
 	return (
 		<>
-			{showModal && (
-				<Modal setShowModal={setShowModal} text={content.fields.modalText} />
-			)}
+			<Modal
+				showModal={showModal}
+				setShowModal={setShowModal}
+				text={content.fields.modalText}
+			/>
+
 			<section id='hero' className={styles.hero}>
 				<div>{documentToReactComponents(content.fields.title)}</div>
 
