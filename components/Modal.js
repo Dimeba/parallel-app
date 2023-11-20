@@ -12,6 +12,7 @@ const Modal = ({ setShowModal, text }) => {
 
 				<form
 					name='contact'
+					method='POST'
 					netlify-honeypot='bot-field'
 					data-netlify='true'
 					// onSubmit={e => {
@@ -20,8 +21,13 @@ const Modal = ({ setShowModal, text }) => {
 					// }}
 				>
 					<input type='hidden' name='form-name' value='contact' />
-					<input type='text' placeholder='Full Name' />
-					<input type='email' placeholder='Email Address' />
+					<input type='text' id='name' name='name' placeholder='Full Name' />
+					<input
+						type='email'
+						id='email'
+						name='email'
+						placeholder='Email Address'
+					/>
 					<button className='button-blue' type='submit'>
 						Confirm
 					</button>
