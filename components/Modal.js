@@ -19,6 +19,7 @@ const Modal = ({ setShowModal, text }) => {
 						setShowModal(false)
 					}}
 				>
+					<input type='hidden' name='form-name' value='contact' />
 					<input type='text' placeholder='Full Name' />
 					<input type='email' placeholder='Email Address' />
 					<button className='button-blue'>Confirm</button>
