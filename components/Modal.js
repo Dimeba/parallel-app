@@ -12,6 +12,7 @@ const Modal = ({ setShowModal, text }) => {
 
 				<form
 					name='contact'
+					method='POST'
 					netlify
 					onSubmit={e => {
 						e.preventDefault()
