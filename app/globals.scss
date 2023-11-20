@@ -82,6 +82,12 @@ section {
 
 // buttons
 
+.buttonsRow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
 %button {
 	padding: 0.8rem 2rem;
 	font-weight: 700;
@@ -101,6 +107,19 @@ section {
 .button-blue:hover {
 	background-color: transparent;
 	color: base.$color-highlight;
+}
+
+.button-gray {
+	@extend %button;
+	background-color: base.$color-light;
+	border: 2px solid base.$color-light;
+	color: base.$color-main;
+}
+
+.button-gray:hover {
+	background-color: transparent;
+	color: base.$color-main;
+	border: 2px solid base.$color-main;
 }
 
 @media screen and (max-width: 1024px) {
