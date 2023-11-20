@@ -10,9 +10,16 @@ const Modal = ({ setShowModal, text }) => {
 			<div className={styles.modalContent}>
 				{documentToReactComponents(text)}
 
-				<form name='contact' netlify-honeypot='bot-field' data-netlify='true'>
+				<form
+					name='contact'
+					netlify
+					onSubmit={e => {
+						e.preventDefault()
+						setShowModal(false)
+					}}
+				>
 					<input type='text' placeholder='Full Name' />
-					<input type='text' placeholder='Email Address' />
+					<input type='email' placeholder='Email Address' />
 					<div className='buttonsRow'>
 						<button className='button-blue'>Confirm</button>
 					</div>
