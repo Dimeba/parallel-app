@@ -23,12 +23,24 @@ const Modal = ({ showModal, setShowModal, text }) => {
 					// }}
 				>
 					<input type='hidden' name='form-name' value='contact' />
-					<input type='text' id='name' name='name' placeholder='Full Name' />
+					<input
+						type='text'
+						id='name'
+						name='name'
+						placeholder='Full Name'
+						required
+					/>
 					<input
 						type='email'
 						id='email'
 						name='email'
 						placeholder='Email Address'
+						required
+					/>
+					<textarea
+						name='message'
+						id='message'
+						placeholder='Message (Optional)'
 					/>
 					<button className='button-blue' type='submit'>
 						Confirm

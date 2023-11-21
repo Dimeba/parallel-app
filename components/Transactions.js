@@ -29,10 +29,7 @@ const Transactions = ({ content }) => {
 				<h2>{content.fields.title}</h2>
 			</div>
 
-			<div
-				className={styles.transactionsContainer}
-				style={{ marginBottom: '2rem' }}
-			>
+			<div className={styles.transactionsContainer}>
 				{/* Top row */}
 				<div
 					className={styles.slider}

@@ -40,7 +40,8 @@
 		align-items: center;
 		gap: 1rem;
 
-		input {
+		input,
+		textarea {
 			width: 100%;
 			border: 1px solid base.$color-highlight;
 			border-radius: 5px;
@@ -52,6 +53,10 @@
 			outline: none;
 			box-shadow: none;
 			background-color: transparent;
+		}
+
+		textarea {
+			height: 150px;
 		}
 
 		button {

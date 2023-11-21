@@ -12,6 +12,7 @@
 
 html {
 	scroll-behavior: smooth !important;
+	scroll-padding-top: 100px;
 }
 
 .background-symbol {
@@ -73,11 +74,20 @@ h5 {
 }
 
 // sections
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: clamp(100px, 25vh, 300px);
+	padding: clamp(100px, 25vh, 300px) 0;
+}
+
 section {
 	width: 1440px;
 	max-width: 90%;
 	// min-height: 100vh;
-	margin: 0 auto 33vh auto;
+	// margin: 0 auto 33vh auto;
 }
 
 // buttons
@@ -133,7 +143,12 @@ section {
 		font-size: 2rem;
 	}
 
-	section {
-		margin: 0 auto 10vh auto;
+	main {
+		gap: clamp(100px, 25vh, 100px);
+		padding: clamp(100px, 25vh, 300px) 0;
 	}
+
+	// 	section {
+	// 		margin: 0 auto 10vh auto;
+	// 	}
 }

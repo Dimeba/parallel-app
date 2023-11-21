@@ -28,8 +28,6 @@
 }
 
 .teamMember {
-	padding-top: calc(4 * base.$desktop-margin);
-	padding-bottom: calc(4 * base.$desktop-margin);
 	display: flex;
 	align-items: top;
 	gap: base.$desktop-margin;

@@ -39,7 +39,7 @@ export default async function Home() {
 	})
 
 	return (
-		<main>
+		<main className='page'>
 			<Hero content={hero.items[0]} company={company.items[0]} />
 			<About content={about.items[0]} />
 			<Transactions content={transactions.items[0]} />
