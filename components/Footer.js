@@ -38,9 +38,9 @@ const Footer = ({ about, transactions, team, platform, company }) => {
 					<a href='/#team' aria-label={team}>
 						<li>{team}</li>
 					</a>
-					<a href='/#platform' aria-label={platform}>
+					{/* <a href='/#platform' aria-label={platform}>
 						<li>{platform}</li>
-					</a>
+					</a> */}
 				</ul>
 
 				<ul>

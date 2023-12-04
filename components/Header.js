@@ -72,11 +72,11 @@ const Header = ({ about, team, transactions, platform }) => {
 								{team}
 							</li>
 						</a>
-						<a href='/#platform'>
+						{/* <a href='/#platform'>
 							<li onClick={() => closeMenu()} aria-label={platform}>
 								{platform}
 							</li>
-						</a>
+						</a> */}
 					</ul>
 				</div>
 			</header>

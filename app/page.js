@@ -44,7 +44,9 @@ export default async function Home() {
 			<About content={about.items[0]} />
 			<Transactions content={transactions.items[0]} />
 			<Team content={team.items[0]} />
-			<OurPlatform content={platform.items[0]} />
+			{platform.items[0].fields.showSection && (
+				<OurPlatform content={platform.items[0]} />
+			)}
 		</main>
 	)
 }
