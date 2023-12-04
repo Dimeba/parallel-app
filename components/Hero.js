@@ -34,7 +34,9 @@ const Hero = ({ content, company }) => {
 					{content.fields.buttonText}
 				</button>
 
-				<>{documentToReactComponents(content.fields.subtitle)}</>
+				<div className={styles.subtitle}>
+					<>{documentToReactComponents(content.fields.subtitle)}</>
+				</div>
 
 				<a href='/#about' aria-label='About Us'>
 					<Image
