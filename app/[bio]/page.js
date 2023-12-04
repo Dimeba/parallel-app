@@ -4,6 +4,7 @@ import styles from '@/components/Team.module.scss'
 // components
 import Image from 'next/image'
 import Link from 'next/link'
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 
 // contentful
 import { createClient } from 'contentful'
@@ -63,7 +64,11 @@ export default async function TeamMember({ params }) {
 					<h3 style={{ marginTop: '1rem' }}>{member.fields.name}</h3>
 					<p>{member.fields.title}</p>
 					<br />
-					<p>{member.fields.bio}</p>
+					<div
+						style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
+					>
+						{documentToReactComponents(member.fields.bio)}
+					</div>
 					<div>
 						<br />
 						<p>Tel : {member.fields.phone}</p>
