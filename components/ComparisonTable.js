@@ -20,7 +20,8 @@ const Row = ({ title, tick1, tick2, tick3 }) => {
 		<li>
 			<p>{title}</p>
 			<div className={styles.ticks}>
-				<div className={styles.third}>{tick1 ? tick : ''}</div>
+				{/* bring bellow back to have the first column */}
+				{/* <div className={styles.third}>{tick1 ? tick : ''}</div> */}
 				<div className={styles.third}>{tick2 ? tick : ''}</div>
 				<div className={styles.third}>{tick3 ? tick : ''}</div>
 			</div>
@@ -32,9 +33,10 @@ const ComparisonTable = () => {
 	return (
 		<div className={styles.table}>
 			<div className={styles.tableHead}>
-				<div className={styles.third}>
+				{/* bring bellow back */}
+				{/* <div className={styles.third}>
 					<h5>In-House</h5>
-				</div>
+				</div> */}
 				<div className={styles.third}>
 					<h5>Broker</h5>
 				</div>
