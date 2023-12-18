@@ -39,7 +39,7 @@ const About = ({ content }) => {
 						</div>
 					))}
 					<p className={styles.callout}>
-						*Represents combined principal experience
+						<i>*Represents combined principal experience</i>
 					</p>
 				</BlueBox>
 			</div>
