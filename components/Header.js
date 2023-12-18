@@ -59,24 +59,34 @@ const Header = ({ about, team, transactions, platform }) => {
 					<Hamburger toggleMenu={toggleMenu} menuClass={menuClass} />
 
 					<ul className={hiddenMenuClass}>
-						<a href='/#about' aria-label={about}>
-							<li onClick={() => closeMenu()}>{about}</li>
+						<a href='/#about' aria-label={about.fields.title}>
+							<li onClick={() => closeMenu()}>{about.fields.title}</li>
 						</a>
 						<a href='/#transactions'>
-							<li onClick={() => closeMenu()} aria-label={transactions}>
-								{transactions}
+							<li
+								onClick={() => closeMenu()}
+								aria-label={transactions.fields.title}
+							>
+								{transactions.fields.title}
 							</li>
 						</a>
-						<a href='/#team'>
-							<li onClick={() => closeMenu()} aria-label={team}>
-								{team}
-							</li>
-						</a>
-						{/* <a href='/#platform'>
-							<li onClick={() => closeMenu()} aria-label={platform}>
-								{platform}
-							</li>
-						</a> */}
+						{team.fields.showSection && (
+							<a href='/#team'>
+								<li onClick={() => closeMenu()} aria-label={team.fields.title}>
+									{team.fields.title}
+								</li>
+							</a>
+						)}
+						{platform.fields.showSection && (
+							<a href='/#platform'>
+								<li
+									onClick={() => closeMenu()}
+									aria-label={platform.fields.title}
+								>
+									{platform.fields.title}
+								</li>
+							</a>
+						)}
 					</ul>
 				</div>
 			</header>

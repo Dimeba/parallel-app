@@ -64,17 +64,17 @@ export default async function RootLayout({ children }) {
 					/>
 				</div>
 				<Header
-					about={about.items[0].fields.title}
-					transactions={transactions.items[0].fields.title}
-					team={team.items[0].fields.title}
-					platform={platform.items[0].fields.title}
+					about={about.items[0]}
+					transactions={transactions.items[0]}
+					team={team.items[0]}
+					platform={platform.items[0]}
 				/>
 				{children}
 				<Footer
-					about={about.items[0].fields.title}
-					transactions={transactions.items[0].fields.title}
-					team={team.items[0].fields.title}
-					platform={platform.items[0].fields.title}
+					about={about.items[0]}
+					transactions={transactions.items[0]}
+					team={team.items[0]}
+					platform={platform.items[0]}
 					company={company.items[0]}
 				/>
 			</body>

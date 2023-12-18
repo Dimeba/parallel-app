@@ -43,7 +43,7 @@ export default async function Home() {
 			<Hero content={hero.items[0]} company={company.items[0]} />
 			<About content={about.items[0]} />
 			<Transactions content={transactions.items[0]} />
-			<Team content={team.items[0]} />
+			{team.items[0].fields.showSection && <Team content={team.items[0]} />}
 			{platform.items[0].fields.showSection && (
 				<OurPlatform content={platform.items[0]} />
 			)}

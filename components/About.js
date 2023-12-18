@@ -31,8 +31,8 @@ const About = ({ content }) => {
 						<div key={highlight.sys.id}>
 							<h2>
 								{highlight.fields.preValue && highlight.fields.preValue}
-								{/* {highlight.fields.value} */}
-								<Highlight value={highlight.fields.value} />
+								{highlight.fields.value}
+								{/* <Highlight value={highlight.fields.value} /> */}
 								{highlight.fields.afterValue && highlight.fields.afterValue}
 							</h2>
 							<p>{highlight.fields.title}</p>

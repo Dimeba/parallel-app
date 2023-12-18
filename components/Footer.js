@@ -29,18 +29,22 @@ const Footer = ({ about, transactions, team, platform, company }) => {
 			</div>
 			<div className={styles.links}>
 				<ul className={styles.menu}>
-					<a href='/#about' aria-label={about}>
-						<li>{about}</li>
+					<a href='/#about' aria-label={about.fields.title}>
+						<li>{about.fields.title}</li>
 					</a>
-					<a href='/#transactions' aria-label={transactions}>
-						<li>{transactions}</li>
+					<a href='/#transactions' aria-label={transactions.fields.title}>
+						<li>{transactions.fields.title}</li>
 					</a>
-					<a href='/#team' aria-label={team}>
-						<li>{team}</li>
-					</a>
-					{/* <a href='/#platform' aria-label={platform}>
-						<li>{platform}</li>
-					</a> */}
+					{team.fields.showSection && (
+						<a href='/#team' aria-label={team.fields.title}>
+							<li>{team.fields.title}</li>
+						</a>
+					)}
+					{platform.fields.showSection && (
+						<a href='/#platform' aria-label={platform.fields.title}>
+							<li>{platform.fields.title}</li>
+						</a>
+					)}
 				</ul>
 
 				<ul>
