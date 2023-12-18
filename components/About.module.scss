@@ -83,7 +83,7 @@
 .callout {
 	position: absolute;
 	bottom: 0.5rem;
-	right: 0.5rem;
+	right: 0.7rem;
 	font-size: 0.6rem;
 	line-height: 1rem;
 }
@@ -140,9 +140,9 @@
 		gap: base.$mobile-margin;
 	}
 
-	.callout {
-		right: 50%;
-		transform: translateX(50%);
-		width: 100%;
-	}
+	// .callout {
+	// 	right: 50%;
+	// 	transform: translateX(50%);
+	// 	width: 100%;
+	// }
 }
