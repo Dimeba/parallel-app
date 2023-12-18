@@ -23,7 +23,7 @@ const Highlight = ({ value }) => {
 						return prevCount
 					}
 				})
-			}, 100)
+			}, (40 / value) * 100)
 		}
 
 		return () => {
