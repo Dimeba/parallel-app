@@ -4,7 +4,7 @@ import styles from './About.module.scss'
 // components
 import ComparisonTable from './ComparisonTable'
 import BlueBox from './BlueBox'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
+import Highlight from './Highlight'
 
 const About = ({ content }) => {
 	return (
@@ -29,10 +29,18 @@ const About = ({ content }) => {
 				<BlueBox newClass={styles.keyInfo}>
 					{content.fields.highlights.map(highlight => (
 						<div key={highlight.sys.id}>
-							<h2>{highlight.fields.value}</h2>
+							<h2>
+								{highlight.fields.preValue && highlight.fields.preValue}
+								{/* {highlight.fields.value} */}
+								<Highlight value={highlight.fields.value} />
+								{highlight.fields.afterValue && highlight.fields.afterValue}
+							</h2>
 							<p>{highlight.fields.title}</p>
 						</div>
 					))}
+					<p className={styles.callout}>
+						*Represents combined principal experience
+					</p>
 				</BlueBox>
 			</div>
 		</section>

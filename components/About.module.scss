@@ -80,6 +80,14 @@
 	}
 }
 
+.callout {
+	position: absolute;
+	bottom: 1rem;
+	right: 2rem;
+	font-size: 0.8rem;
+	line-height: 1rem;
+}
+
 @media screen and (max-width: 1024px) {
 	.highlights {
 		flex-direction: column;
@@ -111,6 +119,7 @@
 
 	.keyInfo {
 		width: 100%;
+		padding-bottom: 4rem !important;
 
 		* {
 			text-align: center;
@@ -125,5 +134,15 @@
 		div {
 			width: 100%;
 		}
+	}
+
+	.keyInfo {
+		gap: base.$mobile-margin;
+	}
+
+	.callout {
+		right: 50%;
+		transform: translateX(50%);
+		width: 100%;
 	}
 }

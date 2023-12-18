@@ -145,7 +145,8 @@ section {
 
 	main {
 		gap: clamp(100px, 25vh, 100px);
-		padding: clamp(100px, 25vh, 300px) 0;
+		padding-top: clamp(100px, 25vh, 300px);
+		padding-bottom: 50px;
 	}
 
 	// 	section {
