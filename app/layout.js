@@ -15,7 +15,7 @@ import Image from 'next/image'
 export const metadata = {
 	title: 'Parallel CRE',
 	description:
-		'Parallel CRE is an in-house commercial real estate debt advisory firm, focused on providing each client with a catered experience to achieve COMPETITIVE FINANCING for the LOWEST COST',
+		'Parallel CRE is a commercial real estate debt advisory firm, providing each client with a catered experience to achieve COMPETITIVE FINANCING while SAVING MONEY',
 	keywords:
 		'Real Estate, Capital Services, New York City, Competitive Financing, In-house Service, Lowest Cost, Large lender network, Experienced advisors, Financing focus, No commissions',
 	icons: {
